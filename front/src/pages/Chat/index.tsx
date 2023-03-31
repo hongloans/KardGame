@@ -6,8 +6,7 @@ import { nameState } from '../../store/name';
 import { useRecoilState } from 'recoil';
 
 function Chat(): React.ReactElement {
-  const hostIP = 'localhost';
-
+  const hostIP = process.env.HOST_NAME;
   const [userName, setUserName] = useRecoilState(nameState);
 
   const [messages, setMessages] = useState<Message[]>([]);
